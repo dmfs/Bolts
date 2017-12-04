@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.dmfs.android.bolts.color.colors;
+package org.dmfs.android.bolts.color.elementary;
 
 import android.support.annotation.NonNull;
 
@@ -26,9 +26,7 @@ import org.dmfs.android.bolts.color.Color;
  * A {@link Color} which delegates to another {@link Color}.
  *
  * @author Marten Gajda
- * @deprecated use {@link org.dmfs.android.bolts.color.elementary.DelegatingColor} instead
  */
-@Deprecated
 public abstract class DelegatingColor implements Color
 {
     private final Color mDelegate;

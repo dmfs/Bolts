@@ -15,37 +15,34 @@
  * limitations under the License.
  */
 
-package org.dmfs.android.bolts.color.colors;
-
-import android.support.annotation.ColorInt;
+package org.dmfs.android.bolts.color.elementary;
 
 import org.dmfs.android.bolts.color.Color;
+import org.dmfs.jems.single.Single;
+import org.junit.Test;
+
+import static org.dmfs.jems.mockito.doubles.TestDoubles.failingMock;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
+import static org.mockito.Mockito.doReturn;
 
 
 /**
- * A {@link Color} that simply takes a ready {@link ColorInt} value.
- * <p>
- * Note: When the project uses {@link Color} to represent colors in code everywhere, this class is usually not required.
+ * Unit test for {@link SingleColor}
  *
  * @author Gabor Keszthelyi
- * @deprecated use {@link org.dmfs.android.bolts.color.elementary.ValueColor} instead
  */
-@Deprecated
-public final class ValueColor implements Color
+public final class SingleColorTest
 {
-    private final int mColorInt;
 
-
-    public ValueColor(@ColorInt int colorInt)
+    @Test
+    public void test()
     {
-        mColorInt = colorInt;
-    }
+        Single<Color> mockSingle = failingMock(Single.class);
+        Color mockColor = failingMock(Color.class);
+        doReturn(mockColor).when(mockSingle).value();
+        doReturn(345).when(mockColor).argb();
 
-
-    @ColorInt
-    @Override
-    public int argb()
-    {
-        return mColorInt;
+        assertThat(new SingleColor(mockSingle).argb(), is(345));
     }
 }

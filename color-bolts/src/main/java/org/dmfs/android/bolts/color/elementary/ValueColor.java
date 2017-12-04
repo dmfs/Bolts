@@ -15,34 +15,35 @@
  * limitations under the License.
  */
 
-package org.dmfs.android.bolts.color.colors;
+package org.dmfs.android.bolts.color.elementary;
 
-import android.support.annotation.NonNull;
+import android.support.annotation.ColorInt;
 
 import org.dmfs.android.bolts.color.Color;
 
 
 /**
- * A {@link Color} which delegates to another {@link Color}.
+ * A {@link Color} that simply takes a ready {@link ColorInt} value.
+ * <p>
+ * Note: When the project uses {@link Color} to represent colors in code everywhere, this class is usually not required.
  *
- * @author Marten Gajda
- * @deprecated use {@link org.dmfs.android.bolts.color.elementary.DelegatingColor} instead
+ * @author Gabor Keszthelyi
  */
-@Deprecated
-public abstract class DelegatingColor implements Color
+public final class ValueColor implements Color
 {
-    private final Color mDelegate;
+    private final int mColorInt;
 
 
-    public DelegatingColor(@NonNull Color delegate)
+    public ValueColor(@ColorInt int colorInt)
     {
-        mDelegate = delegate;
+        mColorInt = colorInt;
     }
 
 
+    @ColorInt
     @Override
-    public final int argb()
+    public int argb()
     {
-        return mDelegate.argb();
+        return mColorInt;
     }
 }
