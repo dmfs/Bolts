@@ -24,11 +24,11 @@ import org.dmfs.jems.function.Function;
 
 
 /**
- * {@link Color} decorator to adjust lightness by applying a function to its HSL-Lightness value.
+ * {@link Color} decorator to adjust lightness by applying a function to its HSV-V(Value) value.
  *
  * @author Gabor Keszthelyi
  */
-public final class Toned implements Color
+public final class HsvToned implements Color
 {
     private final Color mOriginal;
     private final Function<Float, Float> mLightnessAdjustingFunction;
@@ -38,11 +38,11 @@ public final class Toned implements Color
      * Creates a new instance with adjusting the original color's lightness.
      *
      * @param lightnessAdjustingFunction
-     *         applied to HSV-Value(Lightness), but the new value will always be clipped to the valid [0,1] range regardless of the result of the function
+     *         applied to HSV-V(Value), but the new value will always be clipped to the valid [0,1] range regardless of the result of the function
      * @param original
      *         the color to change
      */
-    public Toned(Function<Float, Float> lightnessAdjustingFunction, Color original)
+    public HsvToned(Function<Float, Float> lightnessAdjustingFunction, Color original)
     {
         mLightnessAdjustingFunction = new Clamping<>(0f, 1f, lightnessAdjustingFunction);
         mOriginal = original;
@@ -52,14 +52,14 @@ public final class Toned implements Color
     @Override
     public int argb()
     {
-        float[] hsl = new float[3];
+        float[] hsv = new float[3];
         int original = mOriginal.argb();
-        ColorUtils.colorToHSL(original, hsl);
+        android.graphics.Color.colorToHSV(original, hsv);
 
-        hsl[2] = mLightnessAdjustingFunction.value(hsl[2]);
+        hsv[2] = mLightnessAdjustingFunction.value(hsv[2]);
 
         return ColorUtils.setAlphaComponent(
-                ColorUtils.HSLToColor(hsl),
+                android.graphics.Color.HSVToColor(hsv),
                 android.graphics.Color.alpha(original)
         );
     }

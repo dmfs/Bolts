@@ -32,13 +32,13 @@ import static org.junit.Assert.assertNotEquals;
 
 
 /**
- * Unit test for {@link Toned}.
+ * Unit test for {@link HslToned}.
  *
  * @author Gabor Keszthelyi
  */
 @RunWith(RobolectricTestRunner.class)
 @Config(manifest = Config.NONE)
-public final class TonedTest
+public final class HslTonedTest
 {
 
     @Test
@@ -48,7 +48,7 @@ public final class TonedTest
         float[] originalHsl = new float[3];
         ColorUtils.colorToHSL(original, originalHsl);
 
-        int updated = new Toned(new Function<Float, Float>()
+        int updated = new HslToned(new Function<Float, Float>()
         {
             @Override
             public Float value(Float aFloat)
@@ -72,7 +72,7 @@ public final class TonedTest
     @Test
     public void test_thatLowerBoundIsAppliedAutomatically()
     {
-        int updated = new Toned(new Function<Float, Float>()
+        int updated = new HslToned(new Function<Float, Float>()
         {
             @Override
             public Float value(Float aFloat)
@@ -91,7 +91,7 @@ public final class TonedTest
     @Test
     public void test_thatUpperBoundIsAppliedAutomatically()
     {
-        int updated = new Toned(new Function<Float, Float>()
+        int updated = new HslToned(new Function<Float, Float>()
         {
             @Override
             public Float value(Float aFloat)
