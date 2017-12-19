@@ -6,7 +6,6 @@
       <module fileurl="file://$PROJECT_DIR$/color-bolts/color-bolts.iml" filepath="$PROJECT_DIR$/color-bolts/color-bolts.iml" />
       <module fileurl="file://$PROJECT_DIR$/demo/demo.iml" filepath="$PROJECT_DIR$/demo/demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/package-bolts/package-bolts.iml" filepath="$PROJECT_DIR$/package-bolts/package-bolts.iml" />
-      <module fileurl="file://$PROJECT_DIR$/package-bolts/package-bolts.iml" filepath="$PROJECT_DIR$/package-bolts/package-bolts.iml" />
       <module fileurl="file://$PROJECT_DIR$/permission-bolts/permission-bolts.iml" filepath="$PROJECT_DIR$/permission-bolts/permission-bolts.iml" />
       <module fileurl="file://$PROJECT_DIR$/service-bolts/service-bolts.iml" filepath="$PROJECT_DIR$/service-bolts/service-bolts.iml" />
     </modules>

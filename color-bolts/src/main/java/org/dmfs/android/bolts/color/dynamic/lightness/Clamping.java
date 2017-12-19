@@ -44,7 +44,7 @@ final class Clamping<T extends Comparable<T>> implements Function<T, T>
 
     public Clamping(T minValue, T maxValue)
     {
-        this(minValue, maxValue, new IdentityFunction<T>());
+        this(minValue, maxValue, v -> v);
     }
 
 
