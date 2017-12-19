@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Bolts.iml" filepath="$PROJECT_DIR$/Bolts.iml" />
+      <module fileurl="file://$PROJECT_DIR$/boxed-bolts/boxed-bolts.iml" filepath="$PROJECT_DIR$/boxed-bolts/boxed-bolts.iml" />
       <module fileurl="file://$PROJECT_DIR$/color-bolts/color-bolts.iml" filepath="$PROJECT_DIR$/color-bolts/color-bolts.iml" />
       <module fileurl="file://$PROJECT_DIR$/demo/demo.iml" filepath="$PROJECT_DIR$/demo/demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/package-bolts/package-bolts.iml" filepath="$PROJECT_DIR$/package-bolts/package-bolts.iml" />
