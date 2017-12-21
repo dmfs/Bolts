@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.dmfs.android.bolts.box.builders;
+package org.dmfs.android.bolts.box.builders.mutable;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -24,6 +24,7 @@ import org.dmfs.android.bolts.box.Box;
 import org.dmfs.android.bolts.box.Boxable;
 import org.dmfs.android.bolts.box.FluentBuilder;
 import org.dmfs.android.bolts.box.Key;
+import org.dmfs.android.bolts.box.builders.BundleBuilder;
 import org.dmfs.optional.Optional;
 
 
