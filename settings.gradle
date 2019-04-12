@@ -1,1 +1,1 @@
-include ':demo', ':color-bolts', ':permission-bolts', ':service-bolts', ':package-bolts'
+include ':demo', ':color-bolts', ':permission-bolts', ':service-bolts', ':package-bolts', ':testing-bolts'
