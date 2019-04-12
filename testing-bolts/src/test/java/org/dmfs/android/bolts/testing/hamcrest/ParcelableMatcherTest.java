@@ -66,6 +66,15 @@ public class ParcelableMatcherTest
     }
 
 
+    @Test
+    public void testBroken()
+    {
+        // TODO: use a RegexpMatcher to avoid matching the exact numbers. They might vary from one Android API level version to another.
+        assertThat(parcelable(new BrokenParcelable()),
+                mismatches(new BrokenParcelable(), "Parcelable BrokenParcelable wrote 81 bytes but read 78 bytes"));
+    }
+
+
     public final static class TestParcelable implements Parcelable
     {
 
@@ -119,6 +128,40 @@ public class ParcelableMatcherTest
             public TestParcelable[] newArray(int size)
             {
                 return new TestParcelable[size];
+            }
+        };
+    }
+
+
+    public final static class BrokenParcelable implements Parcelable
+    {
+        @Override
+        public int describeContents()
+        {
+            return 0;
+        }
+
+
+        @Override
+        public void writeToParcel(Parcel dest, int flags)
+        {
+            dest.writeString("xyz");
+        }
+
+
+        public final static Creator<BrokenParcelable> CREATOR = new Creator<BrokenParcelable>()
+        {
+            @Override
+            public BrokenParcelable createFromParcel(Parcel source)
+            {
+                return new BrokenParcelable();
+            }
+
+
+            @Override
+            public BrokenParcelable[] newArray(int size)
+            {
+                return new BrokenParcelable[size];
             }
         };
     }

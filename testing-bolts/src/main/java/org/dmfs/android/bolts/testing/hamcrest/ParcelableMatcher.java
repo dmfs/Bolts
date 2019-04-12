@@ -68,9 +68,18 @@ public final class ParcelableMatcher<T extends Parcelable> extends TypeSafeDiagn
         try
         {
             parcel.writeParcelable(item, 0);
+            int pos = parcel.dataPosition();
             parcel.setDataPosition(0);
 
             T result = parcel.readParcelable(item.getClass().getClassLoader());
+            if (pos != parcel.dataPosition())
+            {
+                mismatchDescription.appendText("Parcelable ");
+                mismatchDescription.appendText(item.getClass().getSimpleName());
+                mismatchDescription.appendText(" wrote ").appendText(String.valueOf(pos)).appendText(" bytes");
+                mismatchDescription.appendText(" but read ").appendText(String.valueOf(parcel.dataPosition())).appendText(" bytes");
+                return false;
+            }
             if (!mDelegate.matches(result))
             {
                 mismatchDescription.appendText("unparcelled to ");
