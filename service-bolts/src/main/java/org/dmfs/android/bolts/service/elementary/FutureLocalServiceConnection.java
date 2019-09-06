@@ -22,6 +22,8 @@ import android.content.Intent;
 
 import org.dmfs.android.bolts.service.FutureServiceConnection;
 
+import androidx.annotation.NonNull;
+
 
 /**
  * A {@link FutureServiceConnection} to connect to local services (which means services in the same process which do not use aidl interfaces).
@@ -38,7 +40,7 @@ public final class FutureLocalServiceConnection<T> extends DelegatingServiceConn
      * @param intent
      *         The {@link Intent} to bind the service.
      */
-    public FutureLocalServiceConnection(Context context, Intent intent)
+    public FutureLocalServiceConnection(@NonNull Context context, @NonNull Intent intent)
     {
         super(new BasicServiceConnection<>(context, intent, new LocalServiceStubProxy<T>()));
     }

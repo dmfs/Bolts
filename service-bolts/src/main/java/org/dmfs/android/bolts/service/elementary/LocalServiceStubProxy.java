@@ -21,6 +21,8 @@ import android.os.IBinder;
 
 import org.dmfs.android.bolts.service.StubProxy;
 
+import androidx.annotation.NonNull;
+
 
 /**
  * A {@link StubProxy} for local services.
@@ -30,7 +32,7 @@ import org.dmfs.android.bolts.service.StubProxy;
 public final class LocalServiceStubProxy<T> implements StubProxy<T>
 {
     @Override
-    public T asInterface(IBinder service)
+    public T asInterface(@NonNull IBinder service)
     {
         // for a local service we just need to cast the IBinder
         return (T) service;

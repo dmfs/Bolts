@@ -17,10 +17,10 @@
 
 package org.dmfs.android.bolts.color.dynamic.lightness;
 
-import android.support.v4.graphics.ColorUtils;
-
 import org.dmfs.android.bolts.color.Color;
 import org.dmfs.jems.function.Function;
+
+import androidx.core.graphics.ColorUtils;
 
 
 /**

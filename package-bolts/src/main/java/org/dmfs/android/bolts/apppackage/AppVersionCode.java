@@ -22,6 +22,8 @@ import android.content.pm.PackageInfo;
 
 import org.dmfs.jems.single.Single;
 
+import androidx.annotation.NonNull;
+
 
 /**
  * A {@link Single} of the version code of an app.
@@ -33,18 +35,19 @@ public final class AppVersionCode implements Single<Integer>
     private final Single<PackageInfo> mDelegate;
 
 
-    public AppVersionCode(Context context)
+    public AppVersionCode(@NonNull Context context)
     {
         this(new AppPackageInfo(context, 0));
     }
 
 
-    public AppVersionCode(Single<PackageInfo> delegate)
+    public AppVersionCode(@NonNull Single<PackageInfo> delegate)
     {
         mDelegate = delegate;
     }
 
 
+    @NonNull
     @Override
     public Integer value()
     {

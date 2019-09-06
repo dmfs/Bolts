@@ -18,10 +18,11 @@
 package org.dmfs.android.bolts.color.colors;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
 
 import org.dmfs.android.bolts.R;
 import org.dmfs.android.bolts.color.Color;
+
+import androidx.annotation.NonNull;
 
 
 /**

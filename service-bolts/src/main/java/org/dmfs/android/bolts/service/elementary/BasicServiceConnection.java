@@ -22,19 +22,20 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.IBinder;
-import android.support.annotation.NonNull;
-import android.support.annotation.WorkerThread;
 
 import org.dmfs.android.bolts.service.FutureServiceConnection;
 import org.dmfs.android.bolts.service.StubProxy;
 import org.dmfs.android.bolts.service.exceptions.BindFailed;
-import org.dmfs.optional.Optional;
-import org.dmfs.optional.Present;
+import org.dmfs.jems.optional.Optional;
+import org.dmfs.jems.optional.elementary.Present;
 
 import java.util.Locale;
 import java.util.concurrent.TimeoutException;
 
-import static org.dmfs.optional.Absent.absent;
+import androidx.annotation.NonNull;
+import androidx.annotation.WorkerThread;
+
+import static org.dmfs.jems.optional.elementary.Absent.absent;
 
 
 /**
@@ -88,7 +89,7 @@ final class BasicServiceConnection<T> implements FutureServiceConnection<T>
      * @param stubProxy
      *         A StubProxy to convert the IBinder to the service interface.
      */
-    public BasicServiceConnection(Context context, Intent intent, StubProxy<T> stubProxy)
+    public BasicServiceConnection(@NonNull Context context, @NonNull Intent intent, @NonNull StubProxy<T> stubProxy)
     {
         mContext = context.getApplicationContext();
         mIntent = intent;

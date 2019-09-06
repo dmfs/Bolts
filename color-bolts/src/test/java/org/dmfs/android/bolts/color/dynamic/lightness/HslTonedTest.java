@@ -18,7 +18,7 @@
 package org.dmfs.android.bolts.color.dynamic.lightness;
 
 import android.graphics.Color;
-import android.support.v4.graphics.ColorUtils;
+import androidx.core.graphics.ColorUtils;
 
 import org.dmfs.android.bolts.color.colors.ValueColor;
 import org.dmfs.jems.function.Function;

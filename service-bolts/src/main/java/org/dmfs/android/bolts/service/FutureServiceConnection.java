@@ -16,12 +16,12 @@
 
 package org.dmfs.android.bolts.service;
 
-import android.support.annotation.NonNull;
-import android.support.annotation.WorkerThread;
-
 import org.dmfs.android.bolts.service.exceptions.BindFailed;
 
 import java.util.concurrent.TimeoutException;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.WorkerThread;
 
 
 /**

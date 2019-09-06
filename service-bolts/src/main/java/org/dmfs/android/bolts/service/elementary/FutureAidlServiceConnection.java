@@ -23,6 +23,8 @@ import android.content.Intent;
 import org.dmfs.android.bolts.service.FutureServiceConnection;
 import org.dmfs.android.bolts.service.StubProxy;
 
+import androidx.annotation.NonNull;
+
 
 /**
  * An implementation of {@link FutureServiceConnection} to connect aidl based services.
@@ -40,7 +42,7 @@ public final class FutureAidlServiceConnection<T extends android.os.IInterface> 
      * @param intent
      *         The {@link Intent} to bind the service.
      */
-    public FutureAidlServiceConnection(Context context, Intent intent, StubProxy<T> stubProxy)
+    public FutureAidlServiceConnection(@NonNull Context context, @NonNull Intent intent, @NonNull StubProxy<T> stubProxy)
     {
         super(new BasicServiceConnection<>(context, intent, stubProxy));
     }

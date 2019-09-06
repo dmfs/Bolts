@@ -19,14 +19,15 @@ package org.dmfs.android.bolts.color.colors;
 
 import android.content.Context;
 import android.content.res.Resources;
-import android.support.annotation.AttrRes;
-import android.support.annotation.ColorInt;
-import android.support.annotation.NonNull;
 import android.util.TypedValue;
 
 import org.dmfs.android.bolts.color.Color;
 import org.dmfs.jems.single.Single;
 import org.dmfs.jems.single.elementary.ValueSingle;
+
+import androidx.annotation.AttrRes;
+import androidx.annotation.ColorInt;
+import androidx.annotation.NonNull;
 
 
 /**

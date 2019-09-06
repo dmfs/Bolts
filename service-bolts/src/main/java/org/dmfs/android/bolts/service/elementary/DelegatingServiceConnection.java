@@ -18,13 +18,14 @@
 package org.dmfs.android.bolts.service.elementary;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.annotation.WorkerThread;
 
 import org.dmfs.android.bolts.service.FutureServiceConnection;
 import org.dmfs.android.bolts.service.exceptions.BindFailed;
 
 import java.util.concurrent.TimeoutException;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.WorkerThread;
 
 
 /**
@@ -45,7 +46,7 @@ public abstract class DelegatingServiceConnection<T> implements FutureServiceCon
      * @param delegate
      *         The {@link FutureServiceConnection} to delegate all calls to. A {@link Context}.
      */
-    public DelegatingServiceConnection(FutureServiceConnection<T> delegate)
+    public DelegatingServiceConnection(@NonNull FutureServiceConnection<T> delegate)
     {
         mDelegate = delegate;
     }

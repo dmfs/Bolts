@@ -20,7 +20,6 @@ package org.dmfs.android.bolts.apppackage;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
-import android.support.annotation.NonNull;
 
 import org.dmfs.iterators.EmptyIterator;
 import org.dmfs.iterators.Function;
@@ -30,6 +29,8 @@ import org.dmfs.optional.NullSafe;
 import org.dmfs.optional.decorators.Mapped;
 
 import java.util.Iterator;
+
+import androidx.annotation.NonNull;
 
 
 /**
@@ -43,7 +44,7 @@ public final class RequestedAppPermissions implements Iterable<String>
     private final Single<PackageInfo> mPackageInfo;
 
 
-    public RequestedAppPermissions(Context context)
+    public RequestedAppPermissions(@Deprecated Context context)
     {
         this(new AppPackageInfo(context, PackageManager.GET_PERMISSIONS));
     }
@@ -57,7 +58,7 @@ public final class RequestedAppPermissions implements Iterable<String>
      * @param packageInfo
      *         A {@link Single} {@link PackageInfo} of the app.
      */
-    public RequestedAppPermissions(Single<PackageInfo> packageInfo)
+    public RequestedAppPermissions(@NonNull Single<PackageInfo> packageInfo)
     {
         mPackageInfo = packageInfo;
     }

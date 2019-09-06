@@ -23,6 +23,8 @@ import android.content.pm.PackageManager;
 
 import org.dmfs.jems.single.Single;
 
+import androidx.annotation.NonNull;
+
 
 /**
  * A {@link Single} of the {@link PackageInfo} of the own package.
@@ -35,13 +37,14 @@ public final class AppPackageInfo implements Single<PackageInfo>
     private final int mFlags;
 
 
-    public AppPackageInfo(Context context, int flags)
+    public AppPackageInfo(@Deprecated Context context, int flags)
     {
         mContext = context;
         mFlags = flags;
     }
 
 
+    @NonNull
     @Override
     public PackageInfo value()
     {

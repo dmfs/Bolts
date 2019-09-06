@@ -17,11 +17,11 @@
 
 package org.dmfs.android.bolts.color.elementary;
 
-import android.support.annotation.ColorInt;
-import android.support.annotation.NonNull;
-
 import org.dmfs.android.bolts.color.Color;
 import org.dmfs.jems.single.Single;
+
+import androidx.annotation.ColorInt;
+import androidx.annotation.NonNull;
 
 
 /**

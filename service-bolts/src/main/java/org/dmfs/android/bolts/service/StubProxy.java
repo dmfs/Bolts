@@ -19,6 +19,8 @@ package org.dmfs.android.bolts.service;
 
 import android.os.IBinder;
 
+import androidx.annotation.NonNull;
+
 
 /**
  * TODO: find a better name
@@ -44,5 +46,5 @@ public interface StubProxy<T>
      *
      * @return
      */
-    T asInterface(IBinder service);
+    T asInterface(@NonNull IBinder service);
 }

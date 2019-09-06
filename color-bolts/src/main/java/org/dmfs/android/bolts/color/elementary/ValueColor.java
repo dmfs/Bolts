@@ -17,9 +17,9 @@
 
 package org.dmfs.android.bolts.color.elementary;
 
-import android.support.annotation.ColorInt;
-
 import org.dmfs.android.bolts.color.Color;
+
+import androidx.annotation.ColorInt;
 
 
 /**
